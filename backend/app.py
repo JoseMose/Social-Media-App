@@ -1,4 +1,3 @@
-from typing_extensions import Required
 from flask import Flask, appcontext_popped
 
 app = Flask(__name__)
