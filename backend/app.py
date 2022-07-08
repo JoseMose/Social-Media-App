@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route('/main')
 def main():
-    api = requests.get("https://data.nasdaq.com/api/v3/datatables/ZILLOW/DATA?indicator_id=ZSFH&region_id=102001&api_key=AxG8LscgzpqxLLHjrfa4")
+    api = requests.get("https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=S4NJFeH1hNVgFnWQAT8RkVhfjAJsoc5d")
     response = api.json()
     responding=response
     return {'api': responding}

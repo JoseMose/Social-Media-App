@@ -1,14 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import "./App.css"
 
 function App() {
-  const[getHousingMarket, setGetHousingMarket] = useState(0)
+  const[getHousingMarket, setGetHousingMarket] = useState([])
   const[getTime, setGetTime] = useState(0)
   useEffect(() => {
     fetch('/main').then(res => res.json()).then(data => {
-      setGetHousingMarket(data.api.datatable.data);
-    });
+      console.log(data)
+      setGetHousingMarket(data.api.results);
+    })
   }, []);
   useEffect(() => {
     fetch('/time').then(res => res.json()).then(data => {
@@ -25,7 +25,7 @@ function App() {
     </div>
       <div>
         <div>{getTime}</div>
-        <div>{getHousingMarket}</div>
+        <div>{getHousingMarket.constructor}</div>
       </div>
     </>
   );
