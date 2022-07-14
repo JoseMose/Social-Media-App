@@ -3,6 +3,7 @@ function Time(){
     const[getTime, setGetTime] = useState(0)
     useEffect(() => {
         fetch('/time').then(res => res.json()).then(data => {
+        console.log(data)
         setGetTime(data.time.datetime);
     });
     }, []);
